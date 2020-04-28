@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Гороскоп
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-item>
+      <ion-label>Выберите знак зодиака</ion-label>
+      <ion-select placeholder="" (ionChange)="changeZodiac($event)">
+        <ion-select-option *ngFor="let item of data" value="{{item.name}}">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="description">
+      {{ description }}
+    </div>
   </div>
 </ion-content>
